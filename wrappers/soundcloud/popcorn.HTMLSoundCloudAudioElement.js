@@ -163,6 +163,7 @@
     function onPlayerReady( data ) {
 
       // Turn down the volume and kick-off a play to force load
+      player.setVolume( 0 );
       player.bind( SC.Widget.Events.PLAY_PROGRESS, function( data ) {
         // Turn down the volume.
         // Loading has to be kicked off before volume can be changed.
@@ -475,13 +476,13 @@
           self.dispatchEvent( "progress" );
         };
         elem.src = "https://w.soundcloud.com/player/?url=" + data.uri +
-          "&show_artwork=false" +
+          "&show_artwork=true" +
           "&buying=false" +
           "&liking=false" +
           "&sharing=false" +
           "&download=false" +
           "&show_comments=false" +
-          "&show_user=false" +
+          "&show_user=true" +
           "&single_active=false";
       });
     }
